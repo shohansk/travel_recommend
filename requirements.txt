@@ -16,6 +16,8 @@ dynaconf==3.2.7
     # via travel-recommend (pyproject.toml)
 idna==3.10
     # via requests
+psycopg2-binary==2.9.10
+    # via travel-recommend (pyproject.toml)
 requests==2.32.3
     # via travel-recommend (pyproject.toml)
 sqlparse==0.5.3
