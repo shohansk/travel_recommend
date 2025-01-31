@@ -7,6 +7,8 @@ from rest_framework import status
 from .models import DistrictsLocations
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from drf_yasg.utils import swagger_auto_schema
+from .swagger_responses import next_seven_day_forecast_docs, compare_travel_weather_docs
 
 
 class BaseWeatherView(APIView):
@@ -90,6 +92,7 @@ class NextSevenDayForecastView(BaseWeatherView):
             return None
         return list(districts)
 
+    @swagger_auto_schema(**next_seven_day_forecast_docs)
     def get(self, request):
         """
         Handles GET requests to fetch the next 7-day weather forecast for districts.
@@ -177,6 +180,7 @@ class CompareTravelWeatherView(BaseWeatherView):
                 print(f"Error processing weather data for location {index}: {e}")
         return sorted(locations, key=lambda x: x["average_temp"])
 
+    @swagger_auto_schema(**compare_travel_weather_docs)
     def get(self, request):
         """
         Handles GET requests to fetch weather forecasts for specific locations.
