@@ -92,5 +92,5 @@ staticfiles/
 
 # Ignore dynaconf secret files
 .secrets.yaml
-Ignore SQLite cache files
+#Ignore SQLite cache files
 .cache.sqlite

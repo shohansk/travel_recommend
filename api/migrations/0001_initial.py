@@ -4,27 +4,25 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='DistrictsLocations',
+            name="DistrictsLocations",
             fields=[
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('division_id', models.IntegerField()),
-                ('name', models.CharField(max_length=255)),
-                ('bn_name', models.CharField(max_length=255)),
-                ('lat', models.DecimalField(decimal_places=6, max_digits=9)),
-                ('long', models.DecimalField(decimal_places=6, max_digits=9)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("division_id", models.IntegerField()),
+                ("name", models.CharField(max_length=255)),
+                ("bn_name", models.CharField(max_length=255)),
+                ("lat", models.DecimalField(decimal_places=6, max_digits=9)),
+                ("long", models.DecimalField(decimal_places=6, max_digits=9)),
             ],
             options={
-                'db_table': 'districts_locations',
+                "db_table": "districts_locations",
             },
         ),
     ]

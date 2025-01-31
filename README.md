@@ -21,6 +21,7 @@
 - [Project Setup](#project-setup)
 - [Create Virtualenv](#create-and-activate-virtual-environment)
 - [Install New Libraries](#install-libraries)
+- [Format & Lint Code](#apply-code-format--linting)
 - [Run project](#run-the-project)
 - [Create Superuser](#create-superuser)
 
@@ -50,9 +51,7 @@
 
 ### Project Setup:
 ```shell
-
  cp .secrets.example.yaml .secrets.yaml
-
 ```
 :warning: Please do not edit `requirements.txt` manually.
 
@@ -74,7 +73,11 @@ uv pip compile -o requirements.txt pyproject.toml
 ```shell
 uv pip sync requirements.txt
 ```
-
+##### Apply Code Format & Linting
+```shell
+1. ruff format . # format
+2. ruff check . # lint
+```
 ### Run the project (locally)
 ```shell
 python manage.py runserver
