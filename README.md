@@ -8,6 +8,7 @@
     <img src="https://img.shields.io/badge/Django-%3E%3D5.0.4%2C%3C5.1.0-blue">
     <img src="https://img.shields.io/badge/djangorestframework-%3E%3D3.15.1%2C%3C3.16.0-red">
     <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json"/>
+    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" />
 </div>
 
 
@@ -22,7 +23,8 @@
 - [Create Virtualenv](#create-and-activate-virtual-environment)
 - [Install New Libraries](#install-libraries)
 - [Format & Lint Code](#apply-code-format--linting)
-- [Run project](#run-the-project)
+- [Run project](#run-the-project-locally)
+- [Run test case](#run-test-case)
 - [Create Superuser](#create-superuser)
 
 
@@ -45,6 +47,7 @@
 5. create database <database_name>;
 6. create user <database_user> with encrypted password 'password';
 7. grant all privileges on database <database_name> to <database_user>;
+8. ALTER USER <database_user> CREATEDB; # to run test case
 9. exit 
 ```
 
@@ -78,6 +81,13 @@ uv pip sync requirements.txt
 1. ruff format . # format
 2. ruff check . # lint
 ```
+##### Run test case
+```shell
+1. pytest # run all test case
+2. pytest --cov # check test coverage
+3. coverage report -m # check coverage missing lines
+```
+
 ### Run the project (locally)
 ```shell
 python manage.py runserver

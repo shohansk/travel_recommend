@@ -27,6 +27,37 @@ dependencies = [
     # lint
     "ruff>=0.4.3",
 
+    # test
+    "pytest-cov>=5.0.0,<5.1.0",
+    "pytest-django>=4.8.0,<4.9.0",
+
     # docs
     "drf-yasg>=1.21.7,<1.22.0"
+]
+
+[tool.ruff]
+extend-exclude = [
+    "migrations",
+    "__pycache__"
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings"
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+omit = [
+    "*/migrations/*",
+    "*/commands/*",
+    "*/apps.py",
+    "*/urls.py",
+    "*/__init__.py",
+    "tests/*",
+    "core/settings.py",
+    "*/swagger_responses.py"
+]
+
+[tool.coverage.report]
+exclude_also = [
+    "Exception"
 ]
